@@ -2035,7 +2035,7 @@ func signingParamsForPublicKey(pub interface{}, requestedSigAlgo SignatureAlgori
 		pubType = ECDSA
 
 		switch pub.Curve {
-		case elliptic.P224(), elliptic.P256():
+		case elliptic.P224(), elliptic.P256(), elliptic.Secp256k1():
 			hashFunc = crypto.SHA256
 			sigAlgo.Algorithm = oidSignatureECDSAWithSHA256
 		case elliptic.P384():
